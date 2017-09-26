@@ -3,7 +3,7 @@ import "./card.css";
 
 const Card = (props) => (
     <div className="card">
-        <img src={props.src} />
+        <img src={props.src} alt="A card in the memory game" />
     </div>
 )
 
