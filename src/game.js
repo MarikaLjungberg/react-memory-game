@@ -2,6 +2,7 @@ import React from "react"
 import Card from "./card"
 import "./card.css";
 import shuffle from "shuffle-array"
+import uuidv4 from "uuid/v4"
 
 const photos = [
         "/images/appalachian.jpg",
@@ -42,7 +43,7 @@ class Game extends React.Component {
                     src: imgUrl,
                     alt: alts[i],
                     isFlipped: false,
-                    id: Math.random()
+                    id: uuidv4()
                 }
             )
         })
@@ -53,20 +54,21 @@ class Game extends React.Component {
     }
 
     handleCardClick = (cardId) => {
-        this.state.cards.forEach((card) => {
-            if (card.id === cardId) {
-                card.isFlipped = !card.isFlipped;
-            }
-        })
+        alert(cardId)
     }
 
-    
+
     render() {
         return (
         <div className="game">
             <h1>Ultra Memory Game</h1>
             {this.state.cards.map((card) => (
-                <Card src={card.src} alt={card.alt} id={card.id} onclick={this.handleCardClick}/>
+                <Card
+                    key={card.id}
+                    id={card.id}
+                    src={card.src}
+                    alt={card.alt}
+                    onclick={this.handleCardClick}/>
             ))}
         </div>
         )
