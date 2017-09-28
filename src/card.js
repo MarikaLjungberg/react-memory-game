@@ -11,12 +11,20 @@ class Card extends React.Component {
     // Props become an object, so className="foo" becomes { className: "foo } on this.props,
     // and onClick becomes { onClick: () => {} }
     render() {
-        return (
-        <div className="card" onClick={this.handleClick}>
-            <img src={this.props.src} alt={this.props.alt}/>
-        </div>
-        )
+          return (
+            <div className={this.getClassName()} onClick={this.handleClick} id={this.props.id}>
+                <img src={this.props.isFlipped ? this.props.src : "/images/barefoot.png"} alt={this.props.alt}/>
+            </div>
+          )
     }
+
+    getClassName = () => {
+        if (this.props.isFlipped) {
+             return "card up"
+        }
+        return "card down"
+    }
+    
 }
 
 
