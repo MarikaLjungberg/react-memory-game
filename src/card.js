@@ -20,7 +20,9 @@ class Card extends React.Component {
 
     getClassName = () => {
         if (this.props.isFlipped) {
-             return "card up"
+            return "card up"
+        } else if (this.props.isMatched) {
+            return "card matched"
         }
         return "card down"
     }

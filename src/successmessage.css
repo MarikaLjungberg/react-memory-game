@@ -1,0 +1,8 @@
+.successmessage {
+    font-size: xx-large;
+    top: 50px;
+    margin: 100px auto;
+    padding: 50px;
+    max-width: 30%;
+    border: dotted 5px yellow;
+}
