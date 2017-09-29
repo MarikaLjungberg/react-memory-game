@@ -57,7 +57,6 @@ class Game extends React.Component {
     return cards
   }
   
-  
   resetGame = () => {
     const newCardsState = this.setupGame()
     this.setState({ cards: newCardsState, count: 0 })
@@ -80,6 +79,7 @@ class Game extends React.Component {
     this.setState({ cards: newCardsState, count: this.state.count +1 }, this.checkCards)
   }
   
+  
   checkCards = () => {
     const flippedCards = this.state.cards.filter((card) => {
       return card.isFlipped === true
@@ -98,7 +98,7 @@ class Game extends React.Component {
   }
   
   // TODO: If cards match they should go away directly when a third card is clicked
-  // TODO: and a new card should be clickable immediately
+  // TODO: and a new card should be clickable immediately (i e use the normal handlecardclick method)
   checkIfCardsMatch = (flippedCards) => {
     setTimeout(() => {
       if (flippedCards[0].alt === flippedCards[1].alt) {
@@ -113,6 +113,7 @@ class Game extends React.Component {
         })
     
         this.setState({ cards: matchedCardsState })
+        this.flipAllCardsBack()
     
       } else {
         this.flipAllCardsBack()
