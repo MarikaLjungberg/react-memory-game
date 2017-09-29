@@ -28,7 +28,8 @@ class Game extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      cards: this.setupGame()
+      cards: this.setupGame(),
+      count: 0
     }
   }
   
@@ -58,7 +59,7 @@ class Game extends React.Component {
   
   resetGame = () => {
     const newCardsState = this.setupGame()
-    this.setState({ cards: newCardsState })
+    this.setState({ cards: newCardsState, count: 0 })
   }
   
   
@@ -71,7 +72,7 @@ class Game extends React.Component {
       return card
     })
     
-    this.setState({ cards: newCardsState }, this.checkCards)
+    this.setState({ cards: newCardsState, count: this.state.count +1 }, this.checkCards)
   }
   
   checkCards = () => {
@@ -120,13 +121,15 @@ class Game extends React.Component {
     return (
       <div className="game">
         <h1>Ultra Memory Game</h1>
-        <button onClick={this.resetGame}> Reset Game </button>
+        <div className="features">
+          Count: {this.state.count}
+          <button onClick={this.resetGame}> Reset Game </button>
+        </div>
         {
           this.state.cards.filter((card) => {
             return card.isMatched === false
-          }).length === 0 && <SuccessMessage />
+          }).length === 0 && <SuccessMessage count={this.state.count}/>
         }
-        
         {this.state.cards.map((card) => (
           <Card
             key={card.id}

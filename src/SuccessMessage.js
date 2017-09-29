@@ -7,6 +7,11 @@ class SuccessMessage extends React.Component {
     return (
     <div className="successmessage">
         Flippin awesome!
+      <br/>
+      <br/>
+      <div className="clicksMessage">
+        You won the game in {this.props.count} clicks!
+      </div>
     </div>
     )
   }

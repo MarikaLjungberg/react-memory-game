@@ -13,8 +13,19 @@ body {
 
 button {
   margin: 20px auto;
+  margin-left: 30px;
   padding: 5px;
   text-align: center;
   width: 900px;
-  max-width: 90%;
+  max-width: 10%;
 }
+
+.features {
+  margin: 0px auto;
+  padding: 5px;
+}
+
+h1 {
+  margin: 10px;
+}
+

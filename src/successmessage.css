@@ -6,3 +6,7 @@
     max-width: 30%;
     border: dotted 5px yellow;
 }
+
+.clicksMessage {
+    font-size: large;
+}
