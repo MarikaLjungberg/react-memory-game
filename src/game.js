@@ -7,7 +7,7 @@ import SuccessMessage from "./SuccessMessage"
 
 const photos = [
   "/images/appalachian.jpg",
-  "/images/badwater.png",
+  "/images/badwater-road-enlarge.jpg",
   "/images/fjallravenclassic.jpg",
   "/images/leadville.jpg",
   "/images/teararoa.jpg",
@@ -65,6 +65,15 @@ class Game extends React.Component {
   
   handleDisabledCardClick = (clickedCardId) => {
     console.log(clickedCardId)
+    
+    const flippedCards = this.state.cards.filter((card) => {
+      return card.isFlipped === true
+    })
+    
+    if (flippedCards.length > 1) {
+      // remove matched cards and flip open the clicked one
+    }
+    
     this.flipAllCardsBack()
   }
   
