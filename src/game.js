@@ -46,7 +46,8 @@ class Game extends React.Component {
           alt: alts[i],
           isFlipped: false,
           isMatched: false,
-          id: uuidv4()
+          id: uuidv4(),
+          onclick: this.handleCardClick
         }
       )
     })
@@ -63,6 +64,10 @@ class Game extends React.Component {
   }
   
   
+  handleDisabledCardClick = (clickedCardId) => {
+    console.log(clickedCardId)
+    this.flipAllCardsBack()
+  }
   
   handleCardClick = (clickedCardId) => {
     const newCardsState = this.state.cards.map((card) => {
@@ -80,35 +85,46 @@ class Game extends React.Component {
       return card.isFlipped === true
     })
     if (flippedCards.length > 1) {
-      // TODO: Make it impossible to open another card
-      this.checkIfCardsMatch(flippedCards)
-    }
-  }
-  
-  checkIfCardsMatch = (flippedCards) => {
-    if (flippedCards[0].alt === flippedCards[1].alt) {
-      console.log("Matched!")
-      
-      const matchedCardsState = this.state.cards.map((card) => {
-        if (card.id === flippedCards[0].id || card.id === flippedCards[1].id) {
-          card.isMatched = true
-          card.isFlipped = false
+      // Make it impossible to open another card: put onclick to empty string and rerender
+      const disableNonflippedCardsState = this.state.cards.map((card) => {
+        if (card.isFlipped === false) {
+          card.onclick = this.handleDisabledCardClick
         }
         return card
       })
+      this.setState({ cards: disableNonflippedCardsState}, this.checkIfCardsMatch(flippedCards))
       
-      this.setState({ cards: matchedCardsState})
-      
-    } else {
-      // TODO: If click happens before the timeout has gone, the two cards should flip closed from the click
-      setTimeout(this.flipAllCardsBack, 1000)
     }
+  }
+  
+  // TODO: If cards match they should go away directly when a third card is clicked
+  // TODO: and a new card should be clickable immediately
+  checkIfCardsMatch = (flippedCards) => {
+    setTimeout(() => {
+      if (flippedCards[0].alt === flippedCards[1].alt) {
+        console.log("Matched!")
+    
+        const matchedCardsState = this.state.cards.map((card) => {
+          if (card.id === flippedCards[0].id || card.id === flippedCards[1].id) {
+            card.isMatched = true
+            card.isFlipped = false
+          }
+          return card
+        })
+    
+        this.setState({ cards: matchedCardsState })
+    
+      } else {
+        this.flipAllCardsBack()
+      }
+    }, 1000)
   }
   
   
   flipAllCardsBack = () => {
     const flipBackAllCardsState = this.state.cards.map((card) => {
       card.isFlipped = false
+      card.onclick = this.handleCardClick
       return card
     })
     this.setState({ cards: flipBackAllCardsState })
@@ -138,7 +154,7 @@ class Game extends React.Component {
             alt={card.alt}
             isFlipped={card.isFlipped}
             isMatched={card.isMatched}
-            onclick={this.handleCardClick}/>
+            onclick={card.onclick}/>
         ))}
       </div>
     )

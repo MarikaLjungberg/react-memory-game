@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24de087e-0fd8-4d2e-b4bb-2cafbf7d06c0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SuccessMessage.js" afterPath="$PROJECT_DIR$/src/SuccessMessage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.js" afterPath="$PROJECT_DIR$/src/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.css" afterPath="$PROJECT_DIR$/src/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/successmessage.css" afterPath="$PROJECT_DIR$/src/successmessage.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,8 +32,8 @@
       <file leaf-file-name="game.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="131" column="9" lean-forward="true" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+            <state relative-caret-position="204">
+              <caret line="100" column="57" lean-forward="true" selection-start-line="100" selection-start-column="57" selection-end-line="100" selection-end-column="57" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -47,8 +44,8 @@
       <file leaf-file-name="card.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/card.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+            <state relative-caret-position="126">
+              <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -131,6 +128,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>serviceWorker</find>
+      <find>setT</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -253,12 +251,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506342900054</updated>
-      <workItem from="1506342901239" duration="62892000" />
+      <workItem from="1506342901239" duration="65960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62892000" />
+    <option name="totallyTimeSpent" value="65960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -362,16 +360,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/successmessage.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -398,10 +386,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="131" column="9" lean-forward="true" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+        <state relative-caret-position="204">
+          <caret line="100" column="57" lean-forward="true" selection-start-line="100" selection-start-column="57" selection-end-line="100" selection-end-column="57" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
